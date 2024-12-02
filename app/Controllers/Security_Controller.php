@@ -679,7 +679,7 @@ class Security_Controller extends App_Controller {
 
         if ($projects) {
             foreach ($projects as $project) {
-                $projects_dropdown[$project->id] = $project->title;
+                $projects_dropdown[$project->id] = $project->company_name.' - '.$project->title;
             }
         }
 
