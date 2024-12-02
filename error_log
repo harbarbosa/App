@@ -1,0 +1,140 @@
+[24-Nov-2024 08:52:12 America/Fortaleza] PHP Warning:  require(/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php): Failed to open stream: No such file or directory in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:52:12 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alfahp79/app.alfahp.com.br/index.php:51
+Stack trace:
+#0 {main}
+  thrown in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:52:12 America/Fortaleza] PHP Warning:  require(/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php): Failed to open stream: No such file or directory in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:52:12 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alfahp79/app.alfahp.com.br/index.php:51
+Stack trace:
+#0 {main}
+  thrown in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:52:12 America/Fortaleza] PHP Warning:  require(/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php): Failed to open stream: No such file or directory in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:52:12 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alfahp79/app.alfahp.com.br/index.php:51
+Stack trace:
+#0 {main}
+  thrown in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:52:12 America/Fortaleza] PHP Warning:  require(/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php): Failed to open stream: No such file or directory in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:52:12 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alfahp79/app.alfahp.com.br/index.php:51
+Stack trace:
+#0 {main}
+  thrown in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:52:12 America/Fortaleza] PHP Warning:  require(/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php): Failed to open stream: No such file or directory in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:52:12 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alfahp79/app.alfahp.com.br/index.php:51
+Stack trace:
+#0 {main}
+  thrown in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:52:13 America/Fortaleza] PHP Warning:  require(/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php): Failed to open stream: No such file or directory in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:52:13 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alfahp79/app.alfahp.com.br/index.php:51
+Stack trace:
+#0 {main}
+  thrown in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:52:15 America/Fortaleza] PHP Warning:  require(/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php): Failed to open stream: No such file or directory in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:52:15 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alfahp79/app.alfahp.com.br/index.php:51
+Stack trace:
+#0 {main}
+  thrown in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:52:15 America/Fortaleza] PHP Warning:  require(/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php): Failed to open stream: No such file or directory in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:52:15 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alfahp79/app.alfahp.com.br/index.php:51
+Stack trace:
+#0 {main}
+  thrown in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:52:16 America/Fortaleza] PHP Warning:  require(/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php): Failed to open stream: No such file or directory in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:52:16 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alfahp79/app.alfahp.com.br/index.php:51
+Stack trace:
+#0 {main}
+  thrown in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:52:16 America/Fortaleza] PHP Warning:  require(/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php): Failed to open stream: No such file or directory in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:52:16 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alfahp79/app.alfahp.com.br/index.php:51
+Stack trace:
+#0 {main}
+  thrown in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:52:16 America/Fortaleza] PHP Warning:  require(/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php): Failed to open stream: No such file or directory in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:52:16 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alfahp79/app.alfahp.com.br/index.php:51
+Stack trace:
+#0 {main}
+  thrown in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:52:20 America/Fortaleza] PHP Warning:  require(/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php): Failed to open stream: No such file or directory in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:52:20 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alfahp79/app.alfahp.com.br/index.php:51
+Stack trace:
+#0 {main}
+  thrown in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:52:20 America/Fortaleza] PHP Warning:  require(/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php): Failed to open stream: No such file or directory in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:52:20 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alfahp79/app.alfahp.com.br/index.php:51
+Stack trace:
+#0 {main}
+  thrown in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:52:22 America/Fortaleza] PHP Warning:  require(/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php): Failed to open stream: No such file or directory in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:52:22 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alfahp79/app.alfahp.com.br/index.php:51
+Stack trace:
+#0 {main}
+  thrown in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:52:30 America/Fortaleza] PHP Warning:  require(/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php): Failed to open stream: No such file or directory in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:52:30 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alfahp79/app.alfahp.com.br/index.php:51
+Stack trace:
+#0 {main}
+  thrown in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:54:54 America/Fortaleza] PHP Warning:  require(/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php): Failed to open stream: No such file or directory in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:54:54 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alfahp79/app.alfahp.com.br/index.php:51
+Stack trace:
+#0 {main}
+  thrown in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:54:55 America/Fortaleza] PHP Warning:  require(/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php): Failed to open stream: No such file or directory in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:54:55 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alfahp79/app.alfahp.com.br/index.php:51
+Stack trace:
+#0 {main}
+  thrown in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:54:57 America/Fortaleza] PHP Warning:  require(/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php): Failed to open stream: No such file or directory in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:54:57 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alfahp79/app.alfahp.com.br/index.php:51
+Stack trace:
+#0 {main}
+  thrown in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:56:12 America/Fortaleza] PHP Warning:  require(/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php): Failed to open stream: No such file or directory in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:56:12 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alfahp79/app.alfahp.com.br/index.php:51
+Stack trace:
+#0 {main}
+  thrown in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:56:30 America/Fortaleza] PHP Warning:  require(/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php): Failed to open stream: No such file or directory in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:56:30 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alfahp79/app.alfahp.com.br/index.php:51
+Stack trace:
+#0 {main}
+  thrown in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:56:31 America/Fortaleza] PHP Warning:  require(/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php): Failed to open stream: No such file or directory in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:56:31 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alfahp79/app.alfahp.com.br/index.php:51
+Stack trace:
+#0 {main}
+  thrown in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:56:34 America/Fortaleza] PHP Warning:  require(/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php): Failed to open stream: No such file or directory in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:56:34 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alfahp79/app.alfahp.com.br/index.php:51
+Stack trace:
+#0 {main}
+  thrown in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:59:53 America/Fortaleza] PHP Warning:  require(/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php): Failed to open stream: No such file or directory in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 08:59:53 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alfahp79/app.alfahp.com.br/index.php:51
+Stack trace:
+#0 {main}
+  thrown in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 09:01:18 America/Fortaleza] PHP Warning:  require(/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php): Failed to open stream: No such file or directory in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 09:01:18 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alfahp79/app.alfahp.com.br/index.php:51
+Stack trace:
+#0 {main}
+  thrown in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 09:14:03 America/Fortaleza] PHP Warning:  require(/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php): Failed to open stream: No such file or directory in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 09:14:03 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alfahp79/app.alfahp.com.br/index.php:51
+Stack trace:
+#0 {main}
+  thrown in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 09:14:04 America/Fortaleza] PHP Warning:  require(/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php): Failed to open stream: No such file or directory in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 09:14:04 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alfahp79/app.alfahp.com.br/index.php:51
+Stack trace:
+#0 {main}
+  thrown in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 09:14:04 America/Fortaleza] PHP Warning:  require(/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php): Failed to open stream: No such file or directory in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 09:14:04 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alfahp79/app.alfahp.com.br/index.php:51
+Stack trace:
+#0 {main}
+  thrown in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 09:14:04 America/Fortaleza] PHP Warning:  require(/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php): Failed to open stream: No such file or directory in /home2/alfahp79/app.alfahp.com.br/index.php on line 51
+[24-Nov-2024 09:14:04 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/alfahp79/app.alfahp.com.br/app/Config/../../system/bootstrap.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/alfahp79/app.alfahp.com.br/index.php:51
+Stack trace:
+#0 {main}
+  thrown in /home2/alfahp79/app.alfahp.com.br/index.php on line 51

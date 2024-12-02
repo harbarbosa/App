@@ -4,8 +4,7 @@ namespace App\Controllers;
 
 use App\Libraries\Excel_import;
 
-require_once APPPATH . 'controllers/Tasks.php';
-
+require_once(__DIR__ . '/Tasks.php');
 class Projects extends Security_Controller
 {
 

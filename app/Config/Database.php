@@ -33,9 +33,9 @@ class Database extends Config
 	public $default = [
 		'DSN'      => '',
 		'hostname' => 'localhost',
-		'username' => 'root',
-		'password' => '',
-		'database' => 'app2',
+		'username' => 'alfahp79_app',
+		'password' => '@Mima0103',
+		'database' => 'alfahp79_app',
 		'DBDriver' => 'MySQLi',
 		'DBPrefix' => 'rise_',
 		'pConnect' => false,
