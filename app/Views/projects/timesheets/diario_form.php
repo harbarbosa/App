@@ -5,6 +5,8 @@
         <div class="container-fluid">
             <input type="hidden" name="id" value="<?php echo $add_type == "multiple" ? "" : $model_info->id; ?>" />
             
+            
+            
 
             <?php if (!$project_id) { ?>
             <div class="form-group">
@@ -12,17 +14,17 @@
                     <label for="project_id" class=" col-md-3"><?php echo app_lang('project'); ?></label>
                     <div class="col-md-9">
                         <?php
-                        echo form_dropdown("project_iid", $projects_dropdown, array(), "class='select2' id='project_id'");
+                        echo form_dropdown("project_id", $projects_dropdown, array(), "class='select2' id='project_id'");
                         ?>
                     </div>
                 </div>
             </div>
-        <?php }else{ ?>
+        <?php } else {?>
+            
             <input type="hidden" name="project_id" value="<?php echo $project_id; ?>" />
-      <?php  } ?>
            
             <?php
-
+        }
             $contexts_dropdown = array();
 
           ?>
@@ -77,32 +79,7 @@
                 }
             }
 
-            if ($show_contexts_dropdown) {
-
-                foreach ($contexts as $context) {
-                    $context_id_key = $context . "_id";
-                    $related_to_dropdowns[$context] = ${$context . "s_dropdown"};
-                    ?>
-                    <div class="form-group hide" id="<?php echo $context; ?>-dropdown">
-                        <div class="row">
-                            <label for="<?php echo $context_id_key; ?>" class=" col-md-3"><?php echo app_lang($context); ?></label>
-                            <div class="col-md-9">
-                                <?php
-                                echo form_input(array(
-                                    "id" => $context_id_key,
-                                    "name" => $context_id_key,
-                                    "value" => $model_info->$context_id_key,
-                                    "class" => "form-control task-context-options",
-                                    "placeholder" => app_lang($context),
-                                    "data-msg-required" => app_lang("field_required"),
-                                ));
-                                ?>
-                            </div>
-                        </div>
-                    </div>
-                    <?php
-                }
-            }
+          
             ?>    
 
 <?php if ((get_setting("users_can_input_only_total_hours_instead_of_period") && (!$diario_model->id || $diario_model->hours)) || (!get_setting("users_can_input_only_total_hours_instead_of_period") && $diario_model->hours)) { ?>
@@ -525,6 +502,7 @@
             });
 
                 
+            
 
        
 

@@ -48,6 +48,8 @@ class Projects extends Security_Controller
         $hours = "";
 
         $project_id = $this->request->getPost('project_id');
+
+        
         $atividade_realizada = $this->request->getPost('atividade_realizada');
         $observacoes = $this->request->getPost('observacoes');
         $tempo_manha = $this->request->getPost('tempo_manha');
@@ -2131,6 +2133,40 @@ class Projects extends Security_Controller
     }
 
     /* load timelog add/edit modal */
+
+    function timelog_modal_form2()
+    {
+        $this->access_only_team_members();
+        $view_data['time_format_24_hours'] = get_setting("time_format") == "24_hours" ? true : false;
+        $model_info = $this->Timesheets_model->get_one($this->request->getPost('id'));
+        $project_id = $this->request->getPost('project_id') ? $this->request->getPost('project_id') : $model_info->project_id;
+
+        //set the login user as a default selected member
+        if (!$model_info->user_id) {
+            $model_info->user_id = $this->login_user->id;
+        }
+
+        //get related data
+        $related_data = $this->_prepare_all_related_data_for_timelog($project_id);
+        $show_porject_members_dropdown = get_array_value($related_data, "show_porject_members_dropdown");
+        $view_data["tasks_dropdown"] = get_array_value($related_data, "tasks_dropdown");
+        $view_data["project_members_dropdown"] = get_array_value($related_data, "project_members_dropdown");
+
+        $view_data["model_info"] = $model_info;
+
+        if ($model_info->id) {
+            $show_porject_members_dropdown = false; //don't allow to edit the user on update.
+        }
+
+        $view_data["project_id"] = $project_id;
+        $view_data['show_porject_members_dropdown'] = $show_porject_members_dropdown;
+        $view_data["projects_dropdown"] = $this->_get_projects_dropdown();
+
+        $view_data["custom_fields"] = $this->Custom_fields_model->get_combined_details("timesheets", $view_data['model_info']->id, $this->login_user->is_admin, $this->login_user->user_type)->getResult();
+
+        return $this->template->view('projects/timesheets/modal_form', $view_data);
+    }
+
 
     function timelog_modal_form()
     {
