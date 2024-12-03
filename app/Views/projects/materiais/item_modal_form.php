@@ -180,6 +180,7 @@
     $(document).ready(function () {
         setDatePicker("#data_entrega, #end_date, #date");
         MaskMoney();
+        
         $("#project-item-form").appForm({
             onSuccess: function (result) {
                 $("#project-item-table").appTable({newData: result.data, dataId: result.id});

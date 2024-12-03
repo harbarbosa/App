@@ -795,7 +795,7 @@ class Tasks extends Security_Controller {
 
             $estimates = $this->Estimates_model->get_details($options)->getResult();
             foreach ($estimates as $estimate) {
-                $estimates_dropdown[] = array("id" => $estimate->id, "text" => get_estimate_id($estimate->id));
+                $estimates_dropdown[] = array("id" => $estimate->id, "text" => $estimate->titulo.' - '.$estimate->company_name);
             }
         }
 
@@ -1645,6 +1645,7 @@ class Tasks extends Security_Controller {
         if ($model_info->context == "project" && $this->has_all_projects_restricted_role()) {
             app_redirect("forbidden");
         }
+        
 
         $context_id_key = $model_info->context . "_id";
 

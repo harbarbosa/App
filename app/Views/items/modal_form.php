@@ -83,7 +83,7 @@
                             "id" => "item_rate",
                             "name" => "item_rate",
                             "value" => $model_info->rate ? to_decimal_format($model_info->rate) : "",
-                            "class" => "form-control",
+                            "class" => "form-control money-mask",
                             "placeholder" => app_lang('rate'),
                             "data-rule-required" => true,
                             "data-msg-required" => app_lang("field_required"),
@@ -142,6 +142,7 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
+        MaskMoney();
         var uploadUrl = "<?php echo get_uri("uploader/upload_file"); ?>";
         var validationUri = "<?php echo get_uri("uploader/validate_image_file"); ?>";
 
