@@ -56,6 +56,11 @@ class Projects extends Security_Controller
         $tempo_tarde = $this->request->getPost('tempo_tarde');
         $tempo_noite = $this->request->getPost('tempo_noite');
         $collaborators = $this->request->getPost('collaborators');
+        $start_time = $this->request->getPost('start_time');
+        $end_time = $this->request->getPost('end_time');
+        
+      
+
 
         if(!$project_id){
             $project_id = $this->request->getPost('projectid');
@@ -63,8 +68,7 @@ class Projects extends Security_Controller
 
         $id = $this->request->getPost('id');
         
-        $start_time = $this->request->getPost('start_time');
-        $end_time = $this->request->getPost('end_time');
+        
         
 
         if ($start_time) {
@@ -1618,7 +1622,7 @@ class Projects extends Security_Controller
                 $qtArray = count( $collaborators_array);
 
                 
-            $start_time = $data->start_time;
+                $start_time = $data->start_time;
                 $end_time = $data->end_time;
                 $collaborators_array = explode(",", $data->user_id);
                 $seconds = $data->hours
@@ -1628,16 +1632,22 @@ class Projects extends Security_Controller
 
                 $total_durantion = $duration_in_seconds + $total_durantion;
 
+           
+
                     }
+                    
+              
 
             $duration = convert_seconds_to_time_format($total_durantion);
            
             list($horas, $minutos, $segundos) = explode(":", $duration);
                 $horasDecimais = $horas + ($minutos / 60) + ($segundos / 3600);
 
-                $total_tempo = $horasDecimais * 50.50;
+                $dia_total = $horasDecimais / 8;
 
+                $total_tempo = $dia_total * 630;
 
+                
         
         
         $list_data_item = $this->Project_items_model->get_details(array("project_id" => $project_id))->getResult();
@@ -1666,7 +1676,7 @@ class Projects extends Security_Controller
         
         $view_data['lucro'] =  $price - ($soma_itens + $total_tempo + $soma_despesa);
 
-        
+       
         $view_data['soma_itens'] =$soma_itens;
         $view_data['custo_tempo'] = $total_tempo;
         $view_data['despesas'] = $soma_despesa;
