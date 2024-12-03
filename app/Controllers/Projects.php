@@ -1645,7 +1645,7 @@ class Projects extends Security_Controller
 
                 $dia_total = $horasDecimais / 8;
 
-                $total_tempo = $dia_total * 630;
+                $total_tempo = $dia_total * 315;
 
                 
         
