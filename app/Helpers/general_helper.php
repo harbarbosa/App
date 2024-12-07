@@ -852,6 +852,7 @@ if (!function_exists('prepare_estimate_pdf')) {
         $pdf->SetCellPadding(1.5);
         $pdf->setImageScale(1.42);
         $pdf->AddPage();
+        
 
         if ($estimate_data) {
 

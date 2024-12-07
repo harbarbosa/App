@@ -87,10 +87,10 @@ usort($estimate_items, function ($a, $b) {
                 
             </td>
             <td style="text-align: center; width: 15%; border: 1px solid #fff;">
-                <?php echo $item->quantity . " " . $item->unit_type; ?>
+                <?php echo $item->quantity; ?>
             </td>
             <td style="text-align: right; width: 20%; border: 1px solid #fff;">
-                <?php echo to_currency(($item->p_total), $item->currency_symbol); ?>
+               <?php echo to_currency(($item->p_total / $item->quantity), $item->currency_symbol); ?>
             </td>
             <td style="text-align: right; width: 20%; border: 1px solid #fff;">
                 <?php echo to_currency($item->p_total, $item->currency_symbol); ?>

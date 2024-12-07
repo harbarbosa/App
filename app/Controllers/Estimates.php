@@ -1319,6 +1319,7 @@ function item_orcamento_modal_form() {
             show_404();
         }
     }
+    
 
     function download_pdf($estimate_id = 0, $mode = "download", $user_language = "") {
         if ($estimate_id) {
