@@ -1,5 +1,6 @@
 <?php
 
+
 namespace App\Controllers;
 
 class Dashboard extends Security_Controller {
@@ -343,6 +344,7 @@ class Dashboard extends Security_Controller {
             "user_id" => $this->login_user->id,
             "title" => $this->request->getPost("title"),
             "content" => $this->request->getPost("content"),
+            "html" => $this->request->getPost("html"),
             "show_title" => is_null($this->request->getPost("show_title")) ? "" : $this->request->getPost("show_title"),
             "show_border" => is_null($this->request->getPost("show_border")) ? "" : $this->request->getPost("show_border")
         );
@@ -901,6 +903,17 @@ class Dashboard extends Security_Controller {
         $custom_widgets = $this->Custom_widgets_model->get_details(array("user_id" => $this->login_user->id))->getResult();
         if ($custom_widgets) {
             foreach ($custom_widgets as $custom_widget) {
+                $widgets_array[$custom_widget->id] = array(
+                    "title" => $custom_widget->title,
+                    "content" => $custom_widget->content,
+                    "html" => $custom_widget->html // Inclui o conteúdo do widget
+                );
+            }
+        }
+
+        $custom_widgets = $this->Custom_widgets_model->get_details(array("user_id" => $this->login_user->id))->getResult();
+        if ($custom_widgets) {
+            foreach ($custom_widgets as $custom_widget) {
                 $widgets_array[$custom_widget->id] = $custom_widget->title;
             }
         }
@@ -1053,7 +1066,10 @@ class Dashboard extends Security_Controller {
 
     private function _get_widgets_for_staffs($widget, $widgets_array) {
         if (get_array_value($widgets_array, $widget)) {
-            if ($widget == "clock_in_out") {
+
+            if ($widget == "add_timelog") {
+                return add_timelog();
+            } else if ($widget == "clock_in_out") {
                 return clock_widget();
             } else if ($widget == "events_today") {
                 return events_today_widget();

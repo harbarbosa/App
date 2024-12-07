@@ -4,6 +4,25 @@ use App\Controllers\Security_Controller;
 use App\Controllers\Tasks;
 use App\Libraries\Template;
 
+//CUSTOM WIDGET HENRIQUE
+
+/**
+ * get clock in/ clock out widget
+ * @return html
+ */
+if (!function_exists('add_timelog')) {
+
+    function add_timelog() {
+        $ci = new Security_Controller(false);
+        $view_data["clock_status"] = $ci->Attendance_model->current_clock_in_record($ci->login_user->id);
+        $template = new Template();
+        return $template->view("widgets/add_timelog", $view_data);
+    }
+
+}
+
+
+
 /**
  * get clock in/ clock out widget
  * @return html

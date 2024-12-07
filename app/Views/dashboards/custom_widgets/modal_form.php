@@ -43,6 +43,26 @@
 
         <div class="form-group">
             <div class="row">
+                <label for="content" class=" col-md-3">Codigo HTML/PHP</label>
+                <div class=" col-md-9">
+                    <div class="notepad">
+                        <?php
+                       echo form_textarea(array(
+                                "id" => "html",
+                                "name" => "html",
+                                "value" => process_images_from_content($model_info->html, false),
+                                "placeholder" => "Cod. HTML",
+                                "class" => "form-control wysiwyg-editor"
+                            ));
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="row">
                 <label for="show_title" class="col-md-3"><?php echo app_lang('show_title'); ?></label>
                 <div class="col-md-9">
                     <?php

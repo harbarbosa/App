@@ -14,7 +14,23 @@ if ($widget_info->show_border) {
     <?php } ?>
 
     <div class="<?php echo $border_class ?>"> 
-        <?php echo process_images_from_content($widget_info->content); ?>
+        <?php 
+
+            if($widget_info->html){
+
+                $conteudo = html_entity_decode($widget_info->html);
+                ob_start(); // Inicia o buffer de saída
+                eval('?>' . $conteudo); // Executa o PHP
+                echo ob_get_clean(); // Exibe o resultado e limpa o buffer
+
+            }else{
+                echo process_images_from_content($widget_info->content); 
+                    }
+
+
+        
+        
+        ?>
     </div>
 
 </div>

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+
 class Custom_widgets_model extends Crud_model {
 
     protected $table = null;

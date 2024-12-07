@@ -9,7 +9,17 @@
         </div>
         <div class="row">
             <div class="col-md-12 mb15">
-                <?php echo process_images_from_content($model_info->content); ?>
+
+            
+            
+                <?php 
+                $conteudo = html_entity_decode($model_info->html);
+                ob_start(); // Inicia o buffer de saída
+                eval('?>' . $conteudo); // Executa o PHP
+                echo ob_get_clean(); // Exibe o resultado e limpa o buffer
+
+
+                ?>
             </div>
         </div>
     </div>
