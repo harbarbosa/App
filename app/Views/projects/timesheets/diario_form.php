@@ -247,7 +247,7 @@
                 <label class="col-md-2" for="tempo_manha" >Manhã</label>
                 
                     <?php
-                    
+               
                   
                    
                  
@@ -255,7 +255,7 @@
                         "id" => "option_2",
                         "name" => "tempo_manha",
                         "value" => "claro",
-                        "checked" => ($model_info->tempo_manha === "claro"),
+                        "checked" => (empty($model_info->project_id) || ($model_info->tempo_manha === "claro")),
                         
                         "class" => "form-check-input",
                     ));
@@ -286,7 +286,7 @@
                         "id" => "option_1",
                         "name" => "tempo_manha",
                         "value" => "n/a",
-                        "checked" => $model_info->tempo_manha == "n/a" ? true : false,
+                        "checked" => ($model_info->tempo_manha == "n/a"),
                         "class" => "form-check-input ",
                     ));
                     
@@ -317,7 +317,7 @@
                         "id" => "option_2",
                         "name" => "tempo_tarde",
                         "value" => "claro",
-                        "checked" => $model_info->tempo_tarde == "claro" ? true : false,
+                        "checked" => (empty($model_info->project_id) || ($model_info->tempo_tarde === "claro")),
                         
                         "class" => "form-check-input",
                     ));
@@ -328,7 +328,7 @@
                         "id" => "option_1",
                         "name" => "tempo_tarde",
                         "value" => "nublado",
-                        "checked" => $model_info->tempo_tarde == "nublado" ? true : false,
+                        "checked" => ($model_info->tempo_tarde == "nublado"),
                         "class" => "form-check-input ",
                     ));
                     
@@ -338,7 +338,7 @@
                         "id" => "option_1",
                         "name" => "tempo_tarde",
                         "value" => "chuvoso",
-                        "checked" => $model_info->tempo_tarde == "chuvoso" ? true : false,
+                        "checked" => ($model_info->tempo_tarde == "chuvoso"),
                         "class" => "form-check-input ",
                     ));
                     
@@ -348,7 +348,7 @@
                         "id" => "option_1",
                         "name" => "tempo_tarde",
                         "value" => "n/a",
-                        "checked" => $model_info->tempo_tarde == "n/a" ? true : false,
+                        "checked" => ($model_info->tempo_tarde == "n/a"),
                         "class" => "form-check-input ",
                     ));
                     
@@ -378,7 +378,7 @@
                         "id" => "option_2",
                         "name" => "tempo_noite",
                         "value" => "claro",
-                        "checked" => $model_info->tempo_noite == "claro" ? true : false,
+                        "checked" => ($model_info->tempo_noite == "claro"),
                         
                         "class" => "form-check-input",
                     ));
@@ -389,7 +389,7 @@
                         "id" => "option_1",
                         "name" => "tempo_noite",
                         "value" => "nublado",
-                        "checked" => $model_info->tempo_noite == "nublado" ? true : false,
+                        "checked" => ($model_info->tempo_noite == "nublado"),
                         "class" => "form-check-input ",
                     ));
                     
@@ -399,7 +399,7 @@
                         "id" => "option_1",
                         "name" => "tempo_noite",
                         "value" => "chuvoso",
-                        "checked" => $model_info->tempo_noite == "chuvoso" ? true : false,
+                        "checked" => ($model_info->tempo_noite == "chuvoso"),
                         "class" => "form-check-input ",
                     ));
                     
@@ -409,7 +409,7 @@
                         "id" => "option_1",
                         "name" => "tempo_noite",
                         "value" => "n/a",
-                       "checked" => $model_info->tempo_noite == "n/a" ? true : false,
+                        "checked" => (empty($model_info->project_id) || ($model_info->tempo_noite === "n/a")),
                         "class" => "form-check-input ",
                     ));
                     

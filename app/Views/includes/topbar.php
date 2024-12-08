@@ -59,7 +59,8 @@
                     }
                     ?>
 
-                    <?php if (!in_array("language", $hidden_topbar_menus) && (($login_user->user_type == "staff" && !get_setting("disable_language_selector_for_team_members")) || ($login_user->user_type == "client" && !get_setting("disable_language_selector_for_clients")))) { ?>
+                    <?php /*MENU DE IDIOMA
+                     if (!in_array("language", $hidden_topbar_menus) && (($login_user->user_type == "staff" && !get_setting("disable_language_selector_for_team_members")) || ($login_user->user_type == "client" && !get_setting("disable_language_selector_for_clients")))) { ?>
                         <li class="nav-item dropdown">
                             <?php echo js_anchor("<i data-feather='globe' class='icon'></i>", array("id" => "personal-language-icon", "class" => "nav-link dropdown-toggle", "data-bs-toggle" => "dropdown")); ?>
 
@@ -89,7 +90,8 @@
                             </ul>
                         </li>
 
-                    <?php } ?>
+                    <?php } */?>
+
 
                     <?php if (can_access_reminders_module()) { ?>
                         <li class="nav-item dropdown">
