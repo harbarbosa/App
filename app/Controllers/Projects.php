@@ -1511,6 +1511,7 @@ class Projects extends Security_Controller
         }
 
         $view_data["show_files"] = $this->can_view_files();
+        $view_data["show_overview"] = $this->can_view_files();
         $view_data["can_comment_on_projects"] = $this->can_comment_on_projects();
 
         $view_data["tab"] = clean_data($tab);

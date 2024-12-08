@@ -677,6 +677,12 @@ class Left_menu {
 
     //position items for plugins
     private function position_items_for_default_left_menu($sidebar_menu = array()) {
+
+        if (!$this->ci->login_user->is_admin){
+            unset($sidebar_menu["API"]);
+        }
+
+       
         foreach ($sidebar_menu as $key => $menu) {
             $position = get_array_value($menu, "position");
             if ($position) {

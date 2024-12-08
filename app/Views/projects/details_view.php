@@ -69,8 +69,13 @@ if (!function_exists("make_project_tabs_data")) {
                         <?php
                         if ($login_user->user_type === "staff") {
                             //default tab order
+                            
+                            if ($show_overview) {
+                                $project_tabs["overview"] = "projects/overview/" . $project_info->id;
+                            }
+
                             $project_tabs = array(
-                                "overview" => "projects/overview/" . $project_info->id,
+                                
                                 "tasks_list" => "tasks/project_tasks/" . $project_info->id,
                                 "tasks_kanban" => "tasks/project_tasks_kanban/" . $project_info->id,
                                
