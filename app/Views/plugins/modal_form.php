@@ -14,6 +14,7 @@
     </div>
 </div>
 
+
 <div class="modal-footer">
     <button type="button" class="btn btn-default cancel-upload" data-bs-dismiss="modal"><span data-feather="x" class="icon-16"></span> <?php echo app_lang('close'); ?></button>
     <button type="submit" disabled="disabled" class="btn btn-primary start-upload"><span data-feather="download" class="icon-16"></span> <?php echo app_lang('install'); ?></button>

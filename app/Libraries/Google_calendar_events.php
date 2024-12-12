@@ -141,19 +141,19 @@ class Google_calendar_events {
     public function save_event($user_id = 0, $id = 0) {
         if ($user_id && $id && get_setting("enable_google_calendar_api") && get_setting("module_event")) {
             $event_info = $this->ci->Events_model->get_one($id);
-
+    
             if ($event_info) {
                 //prepare data
                 $calendar_event_info = new \stdClass();
                 $service = $this->_get_calendar_service($user_id);
-
+    
                 //prepare date-time object type
                 //start and end times must either both be date or both be dateTime (as per google calendar api policies)
                 $datetime_object_type = "dateTime";
                 if ($event_info->start_time == "00:00:00") {
                     $datetime_object_type = "date";
                 }
-
+    
                 $event = new \Google_Service_Calendar_Event(array(
                     'summary' => $event_info->title,
                     'location' => $event_info->location,
@@ -167,9 +167,10 @@ class Google_calendar_events {
                         'useDefault' => FALSE, //we've to add this functionality after adding the reminder of events
                     )
                 ));
-
-                $calendarId = 'primary'; //insert to own google calendar only
-
+    
+                // Atualize aqui o ID do calendário para o e-mail do calendário compartilhado
+                $calendarId = 'henrique.ap.barbosa@gmail.com';
+    
                 if ($event_info->google_event_id && $event_info->editable_google_event) {
                     //update operation
                     $calendar_event_info = $service->events->update($calendarId, $event_info->google_event_id, $event);
@@ -177,7 +178,7 @@ class Google_calendar_events {
                     //insert operation
                     $calendar_event_info = $service->events->insert($calendarId, $event);
                 }
-
+    
                 //save newly added event information
                 if (isset($calendar_event_info->id) || isset($calendar_event_info->recurringEventId)) {
                     $user_google_calendar_gmail = get_setting('user_' . $user_id . '_google_calendar_gmail');
@@ -191,6 +192,7 @@ class Google_calendar_events {
             }
         }
     }
+    
 
     //get start/end date and time 
     private function _get_start_end_date_time($event_info, $type = "", $datetime_object_type = "") {
@@ -274,10 +276,13 @@ class Google_calendar_events {
         }
     }
 
+
     //get google calendar events
     public function get_google_calendar_events() {
+        
         if (get_setting("enable_google_calendar_api") && get_setting("module_event")) {
             $enabled_users_settings = $this->ci->Events_model->get_integrated_users_with_google_calendar()->getResult();
+            
 
             foreach ($enabled_users_settings as $setting) {
                 $user_id = $setting->setting_name;
@@ -308,6 +313,7 @@ class Google_calendar_events {
                     //if found, get events of all calendar id/s
                     //otherwise get only his primary events
                     $calendar_ids = get_setting("user_" . $user_id . "_calendar_ids");
+                    
                     if ($calendar_ids) {
                         $calendar_ids_array = unserialize($calendar_ids);
                         if (count($calendar_ids_array)) {

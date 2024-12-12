@@ -244,6 +244,7 @@ class Events extends Security_Controller {
         $data["files"] = serialize($new_files);
 
         $data = clean_data($data);
+        
 
         $save_id = $this->Events_model->ci_save($data, $id);
         if ($save_id) {
