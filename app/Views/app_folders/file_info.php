@@ -28,6 +28,12 @@ if (isset($file_info) && $file_info) {
         <ul class="list-group access-list">
             <li class="list-group-item"><?php echo format_to_relative_time($file_info->created_at); ?></li>
         </ul>
+
+        <div class="text-off">Vencimento em</div>
+        <ul class="list-group access-list">
+            <li class="list-group-item"><?php echo format_to_relative_time($file_info->vencimento); ?></li>
+        </ul>
     </div>
+    
 
 <?php } ?>
