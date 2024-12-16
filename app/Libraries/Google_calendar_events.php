@@ -164,7 +164,7 @@ class Google_calendar_events {
                     'attendees' => $this->_get_share_with_emails($event_info),
                     'transparency' => "transparent", // show as available on the event
                     'reminders' => array(
-                        'useDefault' => false, // desativa os lembretes padrão
+                        'useDefault' => true, // desativa os lembretes padrão
                         'overrides' => array(
                             array('method' => 'email', 'minutes' => 60), // Email 1 horas antes
                             array('method' => 'popup', 'minutes' => 10),      // Popup 10 minutos antes
