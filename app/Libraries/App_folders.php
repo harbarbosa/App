@@ -6,6 +6,7 @@ namespace App\Libraries;
 trait App_folders
 {
 
+
     abstract private function _folder_items();
 
     abstract private function _folder_config();
@@ -962,6 +963,7 @@ trait App_folders
 
     function get_file_modal_form()
     {
+
         $view_data['model_info'] = $this->General_files_model->get_one($this->request->getPost('id'));
         $view_data['folder_id'] = $this->request->getPost('folder_id');
         $view_data['client_id'] = $this->request->getPost('client_id');
@@ -1020,6 +1022,7 @@ trait App_folders
         } else {
             $target_path = getcwd() . "/" . $this->_get_file_path();
         }
+       
 
         //process the fiiles which has been uploaded by dropzone
         if ($files && get_array_value($files, 0)) {
@@ -1029,6 +1032,7 @@ trait App_folders
                 if ($file_info) {
                     $data = array(
                         "file_name" => get_array_value($file_info, 'file_name'),
+                        "vencimento" => $this->request->getPost('vencimento'. $file),
                         "file_id" => get_array_value($file_info, 'file_id'),
                         "service_type" => get_array_value($file_info, 'service_type'),
                         "description" => $this->request->getPost('description_' . $file),

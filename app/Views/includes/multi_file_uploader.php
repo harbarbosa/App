@@ -22,17 +22,39 @@
                         </p>
                         <strong class="error text-danger" data-dz-errormessage></strong>
                         <input class="file-count-field" type="hidden" name="files[]" value="" />
+                        <div class="row">
+                            <div class="col-sm-6">
+                            <label for="project_id" class=" col-md-3">Descrição</label>
+                            <?php
+                            if (!isset($hide_description)) {
+                                echo form_input(array(
+                                    "class" => "form-control description-field",
+                                    "placeholder" => isset($description_placeholder) ? $description_placeholder : app_lang("description"),
+                                    "data-rule-required" => isset($description_required) ? true : "false",
+                                    "data-msg-required" => app_lang("field_required"),
+                                ));
+                                ?>
+                                </div>
+                                <div class="col-sm-6">
+                                <label for="project_id" class=" col-md-3">Vencimento</label>
+                                <?php
 
-                        <?php
-                        if (!isset($hide_description)) {
-                            echo form_input(array(
-                                "class" => "form-control description-field",
-                                "placeholder" => isset($description_placeholder) ? $description_placeholder : app_lang("description"),
-                                "data-rule-required" => isset($description_required) ? true : "false",
-                                "data-msg-required" => app_lang("field_required"),
-                            ));
-                        }
-                        ?>
+                                
+                                echo form_input(array(
+                                    "id" => "vencimento",
+                                    "name" => "vencimento",
+                                    "value" => "",
+                                    "class" => "form-control vencimento-field",
+                                    "placeholder" => "Data de Vencimento",
+                                    "autocomplete" => "off",
+                                ));
+
+
+                            
+                            }
+                            ?>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -53,6 +75,9 @@ if (!isset($validation_url)) {
 
 <script type="text/javascript">
     $(document).ready(function () {
+
+       
+
         fileSerial = 0;
 
         // Get the template HTML and remove it from the doumenthe template HTML and remove it from the doument
@@ -107,10 +132,14 @@ if (!isset($validation_url)) {
                         if (response.success) {
                             fileSerial++;
                             $(file.previewTemplate).find(".description-field").attr("name", "description_" + fileSerial);
+                            $(file.previewTemplate).find(".vencimento-field").attr("name", "vencimento" + fileSerial);
+                            $(file.previewTemplate).find(".description-field").attr("name", "description_" + fileSerial);
                             $(file.previewTemplate).append('<input type="hidden" name="file_name_' + fileSerial + '" value="' + file.name + '" />\n\
                                 <input type="hidden" name="file_size_' + fileSerial + '" value="' + file.size + '" />');
+                                
                             $(file.previewTemplate).find(".file-count-field").val(fileSerial);
                             done();
+                            setDatePicker("#vencimento");
                         } else {
                             $(file.previewTemplate).find("input").remove();
                             done(response.message);

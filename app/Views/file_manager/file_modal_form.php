@@ -4,8 +4,9 @@
         <input type="hidden" name="folder_id" value="<?php echo $folder_id; ?>" />
         <input type="hidden" name="client_id" value="<?php echo $client_id; ?>" />
         <?php echo view("includes/multi_file_uploader"); ?>
-    </div>
-</div>
+
+        </div>
+    
 
 <div class="modal-footer">
     <button type="button" class="btn btn-default cancel-upload" data-bs-dismiss="modal"><span data-feather="x" class="icon-16"></span> <?php echo app_lang('close'); ?></button>
