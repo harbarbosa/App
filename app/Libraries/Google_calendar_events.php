@@ -162,14 +162,10 @@ class Google_calendar_events {
                     'end' => $this->_get_start_end_date_time($event_info, "end", $datetime_object_type),
                     'recurrence' => $this->_get_recurrence_data_for_google($event_info),
                     'attendees' => $this->_get_share_with_emails($event_info),
-                    'transparency' => "transparent", // show as available on the event
+                    'transparency' => "transparent", //show as available on the event
                     'reminders' => array(
-                        'useDefault' => true, // desativa os lembretes padrão
-                        'overrides' => array(
-                            array('method' => 'email', 'minutes' => 60), // Email 1 horas antes
-                            array('method' => 'popup', 'minutes' => 10),      // Popup 10 minutos antes
-                        ),
-                    ),
+                        'useDefault' => TRUE, //we've to add this functionality after adding the reminder of events
+                    )
                 ));
 
                 $calendarId = 'primary'; //insert to own google calendar only
