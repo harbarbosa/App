@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+use App\Controllers\ApiEugestor;
 
 class Security_Controller extends App_Controller {
 

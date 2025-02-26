@@ -8,6 +8,7 @@ use App\Libraries\Imap;
 use App\Libraries\Outlook_imap;
 use App\Controllers\ApiEugestor;
 
+
 class Cron_job {
 
     private $today = null;

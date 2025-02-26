@@ -653,6 +653,39 @@ class ApiEugestor extends Controller
      
  }
 
+ public function saveCliente($data, $type)
+    {   
+        set_time_limit(0);
+        $dataUrl = 'https://api.eugestor.insidesistemas.com.br/api/pessoas/'.$type;
+
+
+
+        //VERIFICA NUMERO DE PAGINAS
+      
+        $apiResponse = $this->requestDataPost($dataUrl, $data);
+
+        return $apiResponse;
+
+    
+    }
+
+    public function saveEnderecoCliente($idCliente, $data)
+    {   
+        set_time_limit(0);
+        $dataUrl = 'https://api.eugestor.insidesistemas.com.br/api/pessoas/'.$idCliente.'/enderecos';
+
+
+
+        //VERIFICA NUMERO DE PAGINAS
+      
+        $apiResponse = $this->requestDataPost($dataUrl, $data);
+
+        return $apiResponse;
+
+    
+    }
+
+
  
 
  

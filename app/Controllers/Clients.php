@@ -103,6 +103,7 @@ class Clients extends Security_Controller
 
     /* insert or update a client */
 
+
     function save()
     {
         $client_id = $this->request->getPost('id');
@@ -115,7 +116,46 @@ class Clients extends Security_Controller
 
         $company_name = $this->request->getPost('company_name');
 
+        
+
+        if($this->request->getPost('account_type') == 'organization'){
+            $type = 'juridica';
+        }
+
+        if($this->request->getPost('account_type') == 'person'){
+            $type = 'fisica';
+        }
+
+        $dataApi = array(
+            "fantasia" => $company_name,
+            "razaoSocial" => $this->request->getPost('nome_razao'),
+            "dadosTributarios" => array(
+                "inscricaoEstadual" => null,
+                "inscricaoMunicipal" => null,
+                "isConsumidorFinal" => false
+            ),
+            "tipoCadastro" => array(
+                "isCliente" => true,
+                "isFornecedor" => false,
+                "isFuncionario" => false,
+                "isTecnico" => false,
+                "isTransportador" => false,
+                "isVendedor" => false
+
+            ),
+            
+        );
+
+        
+        
+        $apiEugestor = new ApiEugestor();
+
+        // Chama a função OpenOS do ApiController
+        $resposta = $apiEugestor->saveCliente($dataApi,$type );
+        
+
         $data = array(
+            "id" => $resposta['data']['pessoaEmpresaId'],
             "company_name" => $company_name,
             "type" => $this->request->getPost('account_type'),
             "address" => $this->request->getPost('address'),
@@ -128,6 +168,9 @@ class Clients extends Security_Controller
             "vat_number" => $this->request->getPost('vat_number'),
             "gst_number" => $this->request->getPost('gst_number')
         );
+
+
+
 
         if ($this->login_user->user_type === "staff") {
             $data["group_ids"] = $this->request->getPost('group_ids') ? $this->request->getPost('group_ids') : "";

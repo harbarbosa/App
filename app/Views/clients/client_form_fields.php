@@ -62,7 +62,7 @@
                     "name" => "company_name",
                     "value" => $model_info->company_name,
                     "class" => "form-control company_name_input_section",
-                    "placeholder" => app_lang('company_name'),
+                    "placeholder" => 'Nome Fantasia',
                     "autofocus" => true,
                     "data-rule-required" => true,
                     "data-msg-required" => app_lang("field_required"),
@@ -72,6 +72,27 @@
         </div>
     </div>
 <?php } ?>
+
+<div class="form-group nome_razao_section">
+        <div class="row">
+            <label for="company_name" class="<?php echo $label_column; ?> ">Razão Social</label>
+            <div class="<?php echo $field_column; ?>">
+                <?php
+                echo form_input(array(
+                    "id" => "nome_razao",
+                    "name" => "nome_razao",
+                    "value" => $model_info->nome_razao,
+                    "class" => "form-control nome_razao_input_section",
+                    "placeholder" => 'Razão Social',
+                    "autofocus" => true,
+                    "data-rule-required" => true,
+                    "data-msg-required" => app_lang("field_required"),
+                ));
+                ?>
+            </div>
+        </div>
+    </div>
+    
 
 <?php if ($login_user->is_admin || get_array_value($login_user->permissions, "client") === "all") { ?>
     <div class="form-group">
@@ -368,9 +389,12 @@
             if (inputValue === "person") {
                 $(".company_name_section").html("<?php echo app_lang('name'); ?>");
                 $(".company_name_input_section").attr("placeholder", "<?php echo app_lang('name'); ?>");
+                $(".nome_razao_section").hide();
             } else {
                 $(".company_name_section").html("<?php echo app_lang('company_name'); ?>");
                 $(".company_name_input_section").attr("placeholder", "<?php echo app_lang('company_name'); ?>");
+                $(".nome_razao_input_section").attr("placeholder", "Razão Social");
+                $(".nome_razao_section").show();
             }
         });
 
