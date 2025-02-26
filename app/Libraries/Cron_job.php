@@ -6,6 +6,7 @@ use App\Controllers\App_Controller;
 use App\Libraries\Google_calendar_events;
 use App\Libraries\Imap;
 use App\Libraries\Outlook_imap;
+use App\Controllers\ApiEugestor;
 
 class Cron_job {
 
@@ -20,6 +21,8 @@ class Cron_job {
 
         $this->call_hourly_jobs();
         $this->call_daily_jobs();
+        $this->call_api_eugestor(); // Método para chamar a função OpenOS
+       
 
         try {
             $this->run_imap();
@@ -38,6 +41,20 @@ class Cron_job {
         } catch (\Exception $e) {
             echo $e;
         }
+    }
+
+    private function call_api_eugestor() {
+        // Cria uma instância do ApiController
+        $apiEugestor = new ApiEugestor();
+
+        // Chama a função OpenOS do ApiController
+        $apiEugestor->updateClients();
+       // $apiEugestor->updateProdutos();
+        //$apiEugestor->GetContasOS();
+        //$apiEugestor->UpdateOS();
+       
+        
+        
     }
 
     private function call_hourly_jobs() {

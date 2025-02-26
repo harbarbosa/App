@@ -4,8 +4,8 @@
 <div class="modal-body clearfix">
     <div class="container-fluid">
         <input type="hidden" name="id" value="<?php echo $model_info->id; ?>" />
-        <input type="hidden" id="item_id" name="item_id" value="" />
-        <input type="hidden" id="etapa_id" name="etapa_id" value="" />
+        <input type="hidden" id="item_id" name="item_id" value="<?php echo $model_info->item_id; ?>" />
+        <input type="hidden" id="etapa_id" name="etapa_id" value="<?php echo $model_info->etapa_item; ?>" />
         <input type="hidden" name="estimate_id" value="<?php echo $estimate_id; ?>" />
         <input type="hidden" name="add_new_item_to_library" value="" id="add_new_item_to_library" />
         <div class="form-group">

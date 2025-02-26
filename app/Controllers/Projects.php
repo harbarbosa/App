@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Libraries\Excel_import;
+use App\Controllers\ApiEugestor;
 
 require_once(__DIR__ . '/Tasks.php');
 class Projects extends Security_Controller
@@ -453,7 +454,7 @@ class Projects extends Security_Controller
        
      
        
-        $view_data['project_members_dropdown'] = $this->_get_project_members_dropdown_list_for_filter($project_id);
+       
 
         $view_data['model_info'] = $this->Project_items_model->get_one($this->request->getPost('id'));
 
@@ -534,6 +535,7 @@ class Projects extends Security_Controller
         $item = "<div class='item-row strong mb5' data-id='$data->id'>$move_icon $data->title</div>";
         
         $type = $data->unit_type ? $data->unit_type : "";
+        $total = $data->quantity * $data->rate; 
         
         $retirado_por = $this->Users_model->get_one($data->user_retirada);
         $entregue_por = $this->Users_model->get_one($data->user_entrega);
@@ -544,8 +546,8 @@ class Projects extends Security_Controller
           
             $item,
             to_decimal_format($data->quantity),
-            $entregue_por->first_name.' '.$entregue_por->last_name,
-            $retirado_por->first_name.' '.$retirado_por->last_name,
+            'R$ '.to_decimal_format($data->rate),
+            'R$ '.to_decimal_format($total),
             format_to_date($data->data_retirada),
            
             modal_anchor(get_uri("projects/item_modal_form"), "<i data-feather='edit' class='icon-16'></i>", array("class" => "edit", "title" => app_lang('edit_estimate'), "data-post-id" => $data->id, "data-post-project_id" => $data->project_id))
@@ -814,11 +816,12 @@ class Projects extends Security_Controller
     //get clients dropdown
     private function _get_clients_dropdown_with_permission()
     {
+
         $clients_dropdown = array();
 
         if ($this->login_user->is_admin || get_array_value($this->login_user->permissions, "client")) {
             $access_client = $this->get_access_info("client");
-            $clients = $this->Clients_model->get_details(array("show_own_clients_only_user_id" => $this->show_own_clients_only_user_id(), "client_groups" => $access_client->allowed_client_groups))->getResult();
+            $clients = $this->Clients_model->get_details(array("show_own_clients_only_user_id" => $this->show_own_clients_only_user_id(),"order_by" => "company_name", "client_groups" => $access_client->allowed_client_groups))->getResult();
             foreach ($clients as $client) {
                 $clients_dropdown[$client->id] = $client->company_name;
             }
@@ -1469,6 +1472,8 @@ class Projects extends Security_Controller
 
     function view($project_id = 0, $tab = "")
     {
+       
+
         validate_numeric_value($project_id);
         $this->init_project_permission_checker($project_id);
 
@@ -1531,8 +1536,20 @@ class Projects extends Security_Controller
         $view_data["project_statuses"] = $this->Project_status_model->get_details()->getResult();
         $view_data["show_customer_feedback"] = $this->has_client_feedback_access_permission();
 
+        
+
+       
+       
+
+
         return $this->template->rander("projects/details_view", $view_data);
     }
+
+    //ATUALIZAR PRODUTOS OS
+
+
+
+
 
     private function can_edit_timesheet_settings($project_id)
     {

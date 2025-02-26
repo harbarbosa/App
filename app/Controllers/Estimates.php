@@ -17,6 +17,7 @@ class Estimates extends Security_Controller {
         }
     }
 
+    
     /* load estimate list view */
 
     function index() {
@@ -640,9 +641,10 @@ class Estimates extends Security_Controller {
         $row_data = array(
             $estimate_url,
             $client,
-            $data->estimate_date,
+          
             format_to_date($data->estimate_date, false),
-            to_currency($data->estimate_value, $data->currency_symbol),
+            $data->titulo,
+     
             $this->_get_estimate_status_label($data),
         );
 
@@ -1203,14 +1205,16 @@ function item_orcamento_modal_form() {
             $desc_style = "style='margin-left:30px'";
         }
 
-        $item = "<div class='item-row strong mb5' data-id='$data->id'>$move_icon $data->title</div>";
+        $item = $data->title;
+
+        $etapa =  "<div class='item-row strong mb5' data-id='$data->id'>$move_icon $data->nome_etapa</div>";
         
         $type = $data->unit_type ? $data->unit_type : "";
 
         return array(
             
         
-            $data->nome_etapa,
+            $etapa,
             $item,
             to_decimal_format($data->quantity),
             to_currency($data->rate, $data->currency_symbol),

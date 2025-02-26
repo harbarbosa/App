@@ -31,6 +31,10 @@
                   }
                   ?>
             </div>
+            <div class="float-start mt20 ml15">
+                  <?php echo modal_anchor(get_uri("estimates/item_modal_form"), "<i data-feather='plus-circle' class='icon-16'></i> " . app_lang('add_item'), array("class" => "btn btn-info text-white", "title" => app_lang('add_item'), "data-post-estimate_id" => $estimate_info->id)); ?>
+                 
+               </div>
             <div class="table-responsive mt15 pl15 pr15">
                <table id="estimate-item-table" class="display" width="100%"> 
                </table>

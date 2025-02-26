@@ -31,6 +31,9 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Dashboard::index');
 
+$routes->get('api/authenticate', 'ApiController::authenticate');
+$routes->get('api/fetch-data', 'ApiController::fetchData');
+
 //custom routing for custom pages
 //this route will move 'about/any-text' to 'domain.com/about/index/any-text'
 $routes->add('about/(:any)', 'About::index/$1');

@@ -19,6 +19,7 @@ class Cron extends App_Controller {
         $last_cron_job_time = get_setting('last_cron_job_time');
 
         $current_time = strtotime(get_current_utc_time());
+        $this->cron_job->run();
 
         if ($last_cron_job_time == "" || ($current_time > ($last_cron_job_time * 1 + 300))) {
             $this->cron_job->run();

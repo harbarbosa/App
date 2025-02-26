@@ -54,9 +54,10 @@ class Invoice_items_model extends Crud_model {
 
         $sql = "SELECT $items_table.id, $items_table.title
         FROM $items_table
-        WHERE $items_table.deleted=0  AND $items_table.title LIKE '%$keyword%' ESCAPE '!' $where
-       
-        ";
+        WHERE $items_table.deleted=0  
+        AND $items_table.title LIKE '%$keyword%' ESCAPE '!' 
+        $where
+        ORDER BY $items_table.title ASC";  // Adicionando a ordenação
         return $this->db->query($sql)->getResult();
     }
 
@@ -73,8 +74,7 @@ class Invoice_items_model extends Crud_model {
         $sql = "SELECT $etapa_table.id_etapa, $etapa_table.nome_etapa
         FROM $etapa_table
         WHERE $etapa_table.id_projeto=$estimate_id AND $etapa_table.nome_etapa LIKE '%$keyword%' ESCAPE '!' $where
-         
-        ";
+        ORDER BY $etapa_table.nome_etapa ASC";
         return $this->db->query($sql)->getResult();
     }
 

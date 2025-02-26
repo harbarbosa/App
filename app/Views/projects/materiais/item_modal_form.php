@@ -30,66 +30,9 @@
         </div>
         
        
-                    <div class="form-group">
-                <div class="row">
-                    <label for="entregue_por" class="col-md-3">Entregue por:</label>
-                    <div class="col-md-9" id="dropdown-apploader-section">
-                        <select id="entregue_por" class="form-control" name="entregue_por">
-                            <option value="">- Selecione um colaborador -</option>
-                            <?php foreach ($project_members_dropdown as $member): ?>
-                                <option value="<?php echo $member['id']; ?>" 
-                                    <?php echo ($member['id'] == $model_info->user_entrega) ? 'selected' : ''; ?>>
-                                    <?php echo htmlspecialchars($member['text'], ENT_QUOTES, 'UTF-8'); ?>
-                                </option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="row">
-                    <label for="retirado_por" class="col-md-3">Retirado por:</label>
-                    <div class="col-md-9" id="dropdown-apploader-section">
-                        <select id="retirado_por" class="form-control" name="retirado_por">
-                            <option value="">- Selecione um colaborador -</option>
-                            <?php foreach ($project_members_dropdown as $member): ?>
-                                <option value="<?php echo $member['id']; ?>" 
-                                    <?php echo ($member['id'] == $model_info->user_retirada) ? 'selected' : ''; ?>>
-                                    <?php echo htmlspecialchars($member['text'], ENT_QUOTES, 'UTF-8'); ?>
-                                </option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                </div>
-            </div>
-
+                 
 
       
-            <div class="form-group">
-            <div class="row">
-                <label for="start_date" class=" col-md-3 col-sm-3"><?php echo app_lang('start_date'); ?></label>
-                <div class="col-md-9 col-sm-9 form-group">
-                    <?php
-                    $in_time = is_date_exists($model_info->data_retirada) ? convert_date_utc_to_local($model_info->data_retirada) : "";
-
-                   
-
-                    echo form_input(array(
-                        "id" => "data_entrega",
-                        "name" => "data_entrega",
-                        "value" => $in_time ? date("Y-m-d", strtotime($in_time)) : "",
-                        "class" => "form-control",
-                        "placeholder" => "Data Entrega",
-                        "autocomplete" => "off",
-                        "data-rule-required" => true,
-                        "data-msg-required" => app_lang("field_required"),
-                    ));
-                    ?>
-                </div>
-                
-                </div>
-            </div>
        
 
         <div class="form-group">
@@ -127,22 +70,28 @@
                 </div>
             </div>
         </div>
+
         <div class="form-group">
             <div class="row">
-                <label for="project_unit_type" class=" col-md-3"><?php echo app_lang('unit_type'); ?></label>
+                <label for="project_item_quantity" class=" col-md-3">Preço de Custo</label>
                 <div class="col-md-9">
                     <?php
                     echo form_input(array(
-                        "id" => "project_unit_type",
-                        "name" => "project_unit_type",
-                        "value" => $model_info->unit_type,
+                        "id" => "project_item_rate",
+                        "name" => "project_item_rate",
+                        "value" => $model_info->rate ? to_decimal_format($model_info->rate) : "",
                         "class" => "form-control",
-                        "placeholder" => app_lang('unit_type') . ' (Ex: hours, pc, etc.)'
+                        "placeholder" => "Preço de Custo",
+                        "data-rule-required" => true,
+                        "data-msg-required" => app_lang("field_required"),
                     ));
                     ?>
                 </div>
             </div>
         </div>
+
+
+     
         <div class="form-group collapse">
             <div class="row">
                 <label for="project_item_rate" class=" col-md-3"><?php echo app_lang('rate'); ?></label>
@@ -263,8 +212,7 @@
     
 
         //intialized select2 dropdown for first time
-        $("#entregue_por").select2({data: <?php echo json_encode($project_members_dropdown); ?>});
-        
+    
 
 
 
