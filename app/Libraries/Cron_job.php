@@ -49,9 +49,9 @@ class Cron_job {
 
         // Chama a função OpenOS do ApiController
         $apiEugestor->updateClients();
-       // $apiEugestor->updateProdutos();
-        //$apiEugestor->GetContasOS();
-        //$apiEugestor->UpdateOS();
+       $apiEugestor->updateProdutos();
+        $apiEugestor->GetContasOS();
+        $apiEugestor->UpdateOS();
        
         
         
