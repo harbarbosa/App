@@ -70,7 +70,7 @@
                 {title: '<?php echo app_lang("progress") ?>', "class": "w10p"},
                 {title: '<?php echo app_lang("status") ?>', "class": "w10p"}
 <?php echo $custom_field_headers; ?>,
-                {visible: optionVisibility, title: '<i data-feather="menu" class="icon-16"></i>', "class": "text-center option w100"}
+                {visible: optionVisibility, title: '<i data-feather="menu" class="icon-16"></i>', "class": "text-center option "}
             ],
             order: [[1, "desc"]],
             printColumns: combineCustomFieldsColumns([0, 1, 2, 3, 5, 7, 8, 9], '<?php echo $custom_field_headers; ?>'),

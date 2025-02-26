@@ -1427,13 +1427,19 @@ class Projects extends Security_Controller
         }
 
         $optoins = "";
+        $external_url = "https://sistema.eugestor.app/Operacional/OrdemServico.aspx?OrdemServicoId=" . $data->ordem_servico;
+        $optoins .= "<a href='{$external_url}' target='_blank' title='Abrir no EuGestor'><i data-feather='external-link' class='icon-16'></i></a>";
+
         if ($this->can_edit_projects($data->id)) {
             $optoins .= modal_anchor(get_uri("projects/modal_form"), "<i data-feather='edit' class='icon-16'></i>", array("class" => "edit", "title" => app_lang('edit_project'), "data-post-id" => $data->id));
         }
-
+        
         if ($this->can_delete_projects($data->id)) {
             $optoins .= js_anchor("<i data-feather='x' class='icon-16'></i>", array('title' => app_lang('delete_project'), "class" => "delete", "data-id" => $data->id, "data-action-url" => get_uri("projects/delete"), "data-action" => "delete-confirmation"));
         }
+        
+        // Adicionando o link externo com ícone
+        
 
         //show the project price to them who has permission to create projects
         if ($this->login_user->user_type == "staff" && !$this->can_create_projects()) {
