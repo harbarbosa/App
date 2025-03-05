@@ -669,6 +669,22 @@ class ApiEugestor extends Controller
     
     }
 
+    public function saveProduto($data)
+    {   
+        set_time_limit(0);
+        $dataUrl = 'https://api.eugestor.insidesistemas.com.br/api/produtos';
+
+
+
+      
+        $apiResponse = $this->requestDataPost($dataUrl, $data);
+
+        return $apiResponse;
+
+    
+    }
+
+
     public function saveEnderecoCliente($idCliente, $data)
     {   
         set_time_limit(0);
@@ -685,10 +701,6 @@ class ApiEugestor extends Controller
     
     }
 
-
- 
-
- 
    
 //FUNÇÕES AUXILIARES
 
@@ -789,6 +801,18 @@ public function getPessoa($tecnico)
             
 
         } catch (\Exception $e) {
+            // Exibir erro detalhado no log ou na saída
+            error_log($e->getMessage());
+            error_log($e->getTraceAsString());
+        
+            // Retornar resposta alternativa se $this->response for null
+            if (!$this->response) {
+                return json_encode([
+                    'status' => 'error',
+                    'message' => 'Erro interno: Response não inicializado. ' . $e->getMessage(),
+                ]);
+            }
+        
             return $this->response->setJSON([
                 'status' => 'error',
                 'message' => $e->getMessage(),

@@ -253,7 +253,7 @@
                 
             } else if (e.val) {
                 //get existing item info
-                $("#add_new_item_to_library").val(""); //reset the flag to add new item in library
+                
                 $.ajax({
                     url: "<?php echo get_uri("estimates/get_estimate_etapa_info_suggestion"); ?>",
                     data: {etapa_id: e.val},

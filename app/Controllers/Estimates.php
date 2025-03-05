@@ -875,9 +875,13 @@ function item_orcamento_modal_form() {
             $item_id = $this->request->getPost('item_id');
         }
 
+
+
         //check if the add_new_item flag is on, if so, add the item to libary. 
         $add_new_item_to_library = $this->request->getPost('add_new_item_to_library');
         if ($add_new_item_to_library == 1) {
+
+        
             $library_item_data = array(
                 "title" => $estimate_item_title,
                 "description" => $this->request->getPost('estimate_item_description'),
@@ -885,7 +889,40 @@ function item_orcamento_modal_form() {
                 "rate" => unformat_currency($this->request->getPost('estimate_item_rate')),
                 "bdi" => $estimate_bdi
             );
+
             $item_id = $this->Items_model->ci_save($library_item_data);
+
+            $custo = unformat_currency($this->request->getPost('estimate_item_rate'));
+            $percentual = $estimate_bdi;
+            $venda = $custo * (1+($percentual/100));
+
+
+            $dataApi = [
+                "descricao" => $estimate_item_title,
+                "codigoBarras" => null,
+                "codigoFornecedor" => null,
+                "marcaId" => 16,
+                "modelo" => null,
+                "grupoProdutoId" => 65,
+                "estoqueNegativoPermitido" => true,
+                "locacaoPermitida" => true,
+                "unidadeMedida" => 3,
+                "valores" => [
+                    "custo" => $custo,
+                    "preco" => $venda,
+                    "percentualLucro" => $percentual,
+                    "percentualLucroPadrao" => $percentual,
+                    "usaMargemPadraoParaCalcularPreco" => true
+                ]
+            ];
+    
+            $apiEugestor = new ApiEugestor();
+    
+            // Chama a função OpenOS do ApiController
+            $resposta = $apiEugestor->saveProduto($dataApi);
+
+
+           
         }
 
         $bdi = 1 + ($estimate_bdi / 100);

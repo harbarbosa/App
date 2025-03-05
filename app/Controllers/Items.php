@@ -78,6 +78,36 @@ class Items extends Security_Controller {
 
         $id = $this->request->getPost('id');
 
+        $custo = unformat_currency($this->request->getPost('item_rate'));
+        $percentual = 50;
+        $venda = $custo * (1+($percentual/100));
+
+        $dataApi = [
+            "descricao" => $this->request->getPost('title'),
+            "codigoBarras" => null,
+            "codigoFornecedor" => null,
+            "marcaId" => 16,
+            "modelo" => null,
+            "grupoProdutoId" => 65,
+            "estoqueNegativoPermitido" => true,
+            "locacaoPermitida" => true,
+            "unidadeMedida" => 3,
+            "valores" => [
+                "custo" => $custo,
+                "preco" => $venda,
+                "percentualLucro" => $percentual,
+                "percentualLucroPadrao" => $percentual,
+                "usaMargemPadraoParaCalcularPreco" => true
+            ]
+        ];
+
+        $apiEugestor = new ApiEugestor();
+
+        // Chama a função OpenOS do ApiController
+        $resposta = $apiEugestor->saveProduto($dataApi);
+              
+
+
         $item_data = array(
             "title" => $this->request->getPost('title'),
             "description" => $this->request->getPost('description'),
